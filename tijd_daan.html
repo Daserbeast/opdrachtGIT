@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+	let tijd= new Date();
+	let uren= tijd.getHours();
+	let minuten= tijd.getMinutes()
+	document.write(`${uren}:${minuten}`);
+	if(uren>0 && uren>=7){
+		document.write(`<p>Goeienacht</p>`);
+	}else if (uren>7&& uren<=11){
+		document.write(`<p>Goeiemorgen</p>`);
+	}else if (uren>11&& uren<=18){
+		document.write(`<p>Goeiemiddag</p>`);
+	}else document.write(`<p>Goeie avond</p>`);
+	</script>
+
+
+
+</body>
+</html> 
