@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Getal invoer controleren opdracht.</title>
+</head>
+<body>
+	<script type="text/javascript">
+		"use strict";
+		
+
+		let controleAantal = (Aantal) => {
+			let omzettenInvoer = parseInt(Aantal);
+			if(Aantal ===null){
+				document.write(`Je hebt geanuleerd!`);
+			}else if(Aantal === "" ){
+				document.write(`U heeft niets ingevuld!`);
+			}else if(!isNaN(omzettenInvoer)){
+				return Aantal;
+			}else document.write(`Je hebt iets fout ingegeven.`); return 0;
+		}
+
+
+		let controleGetal = (tal) => {
+			let omzettenInvoer2 = parseInt(tal);
+			if(tal === null || tal === "" || isNaN(omzettenInvoer2)) {
+			return false;
+			}else return tal;
+		}
+
+
+		let getallen = [];
+		let invoerAantal = prompt("Hoeveel getallen wil je ingeven.");
+		let getallenAantal = controleAantal(invoerAantal);
+		let number = 0;
+		if(getallenAantal > 0){for(getallenAantal; getallenAantal > 0; getallenAantal--){
+			let newgetal= prompt(`Geef getal ${++number} in.`);
+			let newgetalcontrol = controleGetal(newgetal);
+			getallen.push(newgetalcontrol);
+				}
+		}
+		document.write(`${getallen}`);
+
+	</script>
+
+</body>
+</html>
