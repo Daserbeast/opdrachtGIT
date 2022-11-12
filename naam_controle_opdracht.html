@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>naam controle opdracht</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		function controle(ontvangen){
+			if(ontvangen === ""){
+				document.write(`je hebt niets ingevuld!`)
+				return false;
+
+			}else if(ontvangen === null){
+				document.write(`Je hebt geamuleerd!`)
+				return false;
+			}else if (ontvangen.length < 2){
+				document.write(`je hebt minder dan 2 tekens ingevuld!`);
+				return false;
+			}else 
+			  return ontvangen.substring(0,1).toUpperCase() + ontvangen.substring(1,ontvangen.lenght);
+
+			
+
+		}
+
+		let voornaam = prompt("Wat is je voornaam?");
+		let controleVoornaam = controle(voornaam);
+		if(controleVoornaam != false){
+			let achternaam = prompt("Wat is je achternaam");
+			let controleAchternaam = controle(achternaam);
+			if(controleAchternaam != false){
+				document.write(`Hey ${controleVoornaam} ${controleAchternaam}.`)
+			}
+		}
+
+
+	</script>
+
+</body>
+</html>
